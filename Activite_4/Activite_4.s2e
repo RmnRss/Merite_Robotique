@@ -1,0 +1,115 @@
+{	"extensionName": "Activite_4",
+	"description": "Activité 4 - Programmation robot",
+	"version": "1.0",
+	"author": "Romain Rousseau",
+	"homepage": "ensim.univ-lemans.fr",
+	"sort":0,
+	"javascriptURL":"js/Activite_4.js",
+	"firmware":"1.0",
+	"extensionPort":0,
+	"blockSpecs": [
+		["h","Activite_4","runArduino"],
+
+		["w",
+			"Arret d'urgence",
+			"arretUrgence",
+		{"inc":"",
+			"def":"",
+			"setup":"",
+			"work":"",
+			"loop":""
+		}],
+
+		["w",
+			"Demarrer le moteur %d.moteurs dans le sens %d.sens avec une vitesse de %d.vitesses",
+			"demarrerMoteur",
+			"M1",
+			"POSITIF",
+			"50",
+		{"inc":"",
+			"def":"",
+			"setup":"pinMode ({0}, OUTPUT);\n",
+			"work":"analogWrite ({0}, {2});\n",
+			"loop":""
+		}],
+
+		["w",
+			"Arreter le moteur %d.moteurs",
+			"arreterMoteur",
+			"M1",
+		{"inc":"",
+			"def":"",
+			"setup":"pinMode ({0}, OUTPUT);\n",
+			"work":"analogWrite ({0}, 0);\n",
+			"loop":""
+			}],
+
+		["w",
+			"Accélerer le moteur %d.moteurs",
+			"accelMoteur",
+			"M1",
+			{"inc":"",
+				"def":"",
+				"setup":"pinMode ({0}, OUTPUT);\n",
+				"work":"",
+				"loop":""
+			}],
+
+			["w",
+				"Ralentir le moteur %d.moteurs",
+				"ralentirMoteur",
+				"M1",
+				{"inc":"",
+					"def":"",
+					"setup":"pinMode ({0}, OUTPUT);\n",
+					"work":"",
+					"loop":""
+				}],
+
+			["R",
+			"Lire l'état de %d.entrees_binaires",
+			"getBinaryIn",
+			"E10",
+			{"inc":"",
+				"def":"",
+				"setup":"pinMode({0}, INPUT);\n",
+				"work":"get_Input({0});",
+				"loop":""}],
+
+			["w",
+			"Activer la sortie %d.sorties_binaires",
+			"setBinaryOutHigh",
+			"S2",
+			{"inc":"",
+				"def":"",
+				"setup":"pinMode({0}, OUTPUT);\n",
+				"work":"digitalWrite({0},HIGH);",
+				"loop":""}],
+
+			["w",
+			"Désactiver la sortie %d.sorties_binaires",
+			"setBinaryOutLow",
+			"S2",
+			{"inc":"",
+			"def":"",
+			"setup":"pinMode({0}, OUTPUT);\n",
+			"work":"digitalWrite({0},LOW);",
+			"loop":""}]
+
+	],
+	"menus": {
+		"moteurs":["M1","M2"],
+		"sens":["POSITIF","NEGATIF"],
+		"vitesses":["0","50","100","150","200","250"],
+		"entrees_binaires":["E10","E11"],
+		"sorties_binaires":["S2","S3","S4","S5","S6","S7","S8","S9"]
+	},
+	"values":{
+		"POSITIF":1,"NEGATIF":0,
+		"E10":4,"E11":3,
+		"M1":1,"M2":2,
+		"S2":2,"S3":3,"S4":4,"S5":5,"S6":6,"S7":7,"S8":8,"S9":9
+	},
+	"translators":{
+	}
+}

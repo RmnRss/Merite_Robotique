@@ -1,0 +1,54 @@
+{	"extensionName": "Activite_2",
+	"description": "Activité 2 - Controle des lumières avec des chiffres",
+	"version": "1.0",
+	"author": "Romain Rousseau",
+	"homepage": "ensim.univ-lemans.fr",
+	"sort":0,
+	"javascriptURL":"js/Activite_2.js",
+	"firmware":"1.0",
+	"extensionPort":0,
+	"blockSpecs": [
+		["h","Activite_2","runArduino"],
+
+		["w",
+			"Arret d'urgence",
+			"arretUrgence",
+		{"inc":"",
+			"def":"",
+			"setup":"",
+			"work":"",
+			"loop":""
+		}],
+
+		["w",
+			"Allumer la lumière N°%d.list_LED",
+			"LED_ON",
+			"2",
+		{"inc":"",
+			"def":"",
+			"setup":"pinMode ({0}, OUTPUT);\n",
+			"work":"digitalWrite({0}, HIGH);\n",
+			"loop":""
+		}],
+
+		["w",
+		"Eteindre la lumière N°%d.list_LED",
+		"LED_OFF",
+		"2",
+		{"inc":"",
+			"def":"",
+			"setup":"pinMode ({0}, OUTPUT);\n",
+			"work":"digitalWrite({0}, LOW);\n",
+			"loop":""
+			}]
+
+	],
+	"menus": {
+		"list_LED":["2","3","4","5","6","7","8","9"]
+	},
+	"values":{
+		"2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9
+	},
+	"translators":{
+	}
+}

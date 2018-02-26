@@ -1,0 +1,56 @@
+{	"extensionName": "Activite_1",
+	"description": "Activité 1 - Controle des lumières par couleurs",
+	"version": "1.0",
+	"author": "Romain Rousseau",
+	"homepage": "ensim.univ-lemans.fr",
+	"sort":0,
+	"javascriptURL":"js/Activite_1.js",
+	"firmware":"1.0",
+	"extensionPort":0,
+	"blockSpecs": [
+		["h","Activite_1","runArduino"],
+
+		["w",
+			"Arret d'urgence",
+			"arretUrgence",
+		{"inc":"",
+			"def":"",
+			"setup":"",
+			"work":"",
+			"loop":""
+		}],
+
+		["w",
+			"Allumer la lumière %d.couleurs",
+			"LED_ON",
+			"verte",
+		{"inc":"",
+			"def":"",
+			"setup":"pinMode ({0}, OUTPUT);\n",
+			"work":"digitalWrite({0}, HIGH);\n",
+			"loop":""
+		}],
+
+		["w",
+		"Eteindre la lumière %d.couleurs",
+		"LED_OFF",
+		"verte",
+		{"inc":"",
+			"def":"",
+			"setup":"pinMode ({0}, OUTPUT);\n",
+			"work":"digitalWrite({0}, LOW);\n",
+			"loop":""
+			}]
+
+	],
+	"menus": {
+		"couleurs":["verte","jaune","rouge"]
+	},
+	"values":{
+		"verte":2,
+		"jaune":3,
+		"rouge":4
+	},
+	"translators":{
+	}
+}
